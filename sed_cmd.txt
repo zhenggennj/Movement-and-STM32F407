@@ -1,0 +1,12 @@
+#s/--  unsupported macro:/ /g
+#s/((uint32_t)0x/:constant Word :=16#/g
+#s/U)$/#;/g
+#/^GPIO/s/((uint8_t)0x/:constant GPIO_AF_T := 16#/g
+#/^GPIO/s/U)/#;/g
+#/\/\*/s/\/\*/-- \/\*/g
+#/^\*/s/\*/-- \*/g
+#s/\#define/ /g
+s/((uint32_t)0x/:constant word :=16\#/g
+/U)$/s/U)/\#;/g
+s/--  unsupported macro:/ /g
+#s/U /\#;/g
